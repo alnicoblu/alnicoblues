@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #4285f4; /* Google Blue */
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        nav {
+            display: flex;
+            background-color: #fff;
+            overflow: hidden;
+        }
+
+        .category-button {
+            background-color: #4285f4; /* Google Blue */
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            flex-grow: 1;
+            text-align: center;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .category-button:hover {
+            background-color: #3a75c3; /* Darker shade of Google Blue on hover */
+        }
+
+        section {
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        h2 {
+            color: #4285f4; /* Google Blue */
+            padding: 15px;
+            margin: 0;
+            border-bottom: 1px solid #ddd;
+            background-color: #f4f4f4;
+        }
+
+        .entry {
+            display: flex;
+            margin-bottom: 0px;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s;
+        }
+
+        .entry:hover {
+            background-color: #f9f9f9;
+        }
+
+        .entry img {
+            max-width: 150px;
+            margin-right: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .ratings {
+          position: relative;
+          vertical-align: middle;
+          display: inline-block;
+          color: #b1b1b1;
+          overflow: hidden;
+        }
+
+        .full-stars{
+          position: absolute;
+          left: 0;
+          top: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          color: #fde16d;
+        }
+
+        .empty-stars:before,
+        .full-stars:before {
+          content: "\2605\2605\2605\2605\2605";
+          font-size: 19pt;
+        }
+
+        .empty-stars:before {
+          -webkit-text-stroke: 1px #848484;
+        }
+
+        .full-stars:before {
+          -webkit-text-stroke: 1px orange;
+        }
+
+        .opinion {
+            color: #555;
+        }
+
+        footer {
+            background-color: #4285f4; /* Google Blue */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .blank-space {
+            height: 50px; /* Adjust the height as needed */
+        }
+    </style>
+    <title>My Media Archive</title>
+</head>
+<body>
+
+    <header>
+        <h1>My Media Archive</h1>
+    </header>
+
+    <nav>
+        <button class="category-button" onclick="showCategory('movies')">Movies</button>
+        <button class="category-button" onclick="showCategory('books')">Books</button>
+        <button class="category-button" onclick="showCategory('webtoons')">Webtoons</button>
+    </nav>
+
+    <main>
+        <section id="movies" class="active">
+            <h2>Movies</h2>
+            <div class="entry">
+                <img src="movie_poster1.jpg" alt="Movie Poster">
+                <div>
+                    <div class="ratings">
+  			<div class="empty-stars"></div>
+			  <div class="full-stars" style="width:70%"></div>
+			</div>
+                    <p class="opinion">Your opinion about the movie goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            
+            <!-- Add more movie entries as needed -->
+            
+        </section>
+
+        <section id="books">
+            <h2>Books</h2>
+            <div class="entry">
+                <img src="book_cover1.jpg" alt="Book Cover">
+                <div>
+                    <div class="ratings">
+  			<div class="empty-stars"></div>
+			  <div class="full-stars" style="width:70%"></div>
+			</div>
+                    <p class="opinion">Your opinion about the book goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            
+            <!-- Add more book entries as needed -->
+            
+        </section>
+
+        <section id="webtoons">
+            <h2>Webtoons</h2>
+            <div class="entry">
+                <img src="https://i.namu.wiki/i/LoMVfTbJJBhUgBp84N_xvNhIYxhcI4m-KgXF-Xvc6_C35vKjexpXnsUa8FfzXJ3YfQpNIwLdKCHHaz66EGpTHUuew4QK9zfB8Jgn6_vQcpow3SnAvxWGI_Fan8xQcz6BcOZqvThq3_uMuNQxk24DLA.webp" alt="Webtoon Cover">
+                <div>
+                    <div class="ratings">
+  			<div class="empty-stars"></div>
+ 			 <div class="full-stars" style="width:70%"></div>
+			</div>
+                    <p class="opinion">Your opinion about the webtoon goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            
+            <div class="entry">
+                <img src="https://comicthumb-phinf.pstatic.net/20190319_41/pocket_1552962786627eLp9m_JPEG/__300x430.jpg?type=m260">
+                <div>
+                    <div class="ratings">
+  			<div class="empty-stars"></div>
+ 			 <div class="full-stars" style="width:70%"></div>
+			</div>
+                    <p class="opinion">Your opinion about the webtoon goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <img src="webtoon_cover3.jpg" alt="Webtoon Cover">
+                <div>
+                    <div class="ratings">
+  			<div class="empty-stars"></div>
+ 			 <div class="full-stars" style="width:70%"></div>
+			</div>
+                    <p class="opinion">Your opinion about the webtoon goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+
+            <!-- Add more webtoon entries as needed -->
+            
+        </section>
+    </main>
+
+    <div class="blank-space"></div>
+
+    <footer>
+        <p>&copy; 2024 My Media Archive</p>
+    </footer>
+
+    <script>
+        function showCategory(category) {
+            document.querySelectorAll('section').forEach((section) => {
+                section.classList.remove('active');
+            });
+
+            document.getElementById(category).classList.add('active');
+        }
+    </script>
+</body>
+</html>
